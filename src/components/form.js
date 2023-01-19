@@ -1,8 +1,22 @@
 import { createSpend } from "../supabase";
+import { useState } from "react";
+
+import DatePicker from "react-datepicker";
+
+import "react-datepicker/dist/react-datepicker.css";
 
 const Form = ({ userData: { isLoggedIn, username, email } }) => {
+  const [date, setDate] = useState(new Date());
   const handleSubmit = async (event) => {
     event.preventDefault();
+
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
+
+    // This arrangement can be altered based on how we want the date's format to appear.
+    let dateofSpend = `${year}-${month}-${day}`;
+    console.log(dateofSpend); // "17-6-2022"
 
     console.log(email);
     if (!isLoggedIn) {
@@ -23,7 +37,7 @@ const Form = ({ userData: { isLoggedIn, username, email } }) => {
 
     if (friends.length == 0) friends.push(username);
 
-    await createSpend({ title, place, amount, friends, email: email });
+    await createSpend({ title, place, amount, friends, email, dateofSpend });
 
     event.target.reset();
 
@@ -188,9 +202,18 @@ const Form = ({ userData: { isLoggedIn, username, email } }) => {
           >
             Chetan
           </label>
+          <p className="bg-slate-900 p-2 text-white">Kb kiya tha 🤨</p>
+          <DatePicker
+            selected={date}
+            dateFormat="yyyy-MM-dd"
+            onChange={(value) => {
+              console.log(value);
+              setDate(value);
+            }}
+          />
 
-          <small id="todoHelp" className="block mt-1 text-xs text-gray-600">
-            We'll never share your data with anyone else.
+          <small className="block mt-1 text-xs text-gray-600">
+            Click the date picker 👆🏼 to select date.
           </small>
         </div>
 

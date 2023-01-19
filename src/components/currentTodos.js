@@ -29,19 +29,32 @@ const CurrentTodos = ({ todos, handleTodos }) => {
               </span>
               <span className="p-2 bg-slate-900 text-white">{todo.place}</span>
             </p>
-            <h3 className="font-semibold bg-slate-900 text-white border rounded p-3">
+            <h3 className="font-semibold w-1/4 bg-slate-900 text-white border rounded p-3">
               Kaun kaun tha -{" "}
             </h3>
-            {todo.friends.map((friend, index) => {
-              return (
-                <p
-                  key={index}
-                  className="mb-3 p-3 font-semibold text-white bg-slate-600 dark:text-gray-400"
-                >
-                  {friend}
-                </p>
-              );
-            })}
+            <div className="flex">
+              {todo.friends.map((friend, index) => {
+                return (
+                  <p
+                    key={index}
+                    className="mb-3 p-3 font-semibold text-white bg-slate-600 dark:text-gray-400"
+                  >
+                    {friend}
+                  </p>
+                );
+              })}
+            </div>
+            <button className="p-2 bg-slate-900 text-white font-light border rounded">
+              Paid by - {todo.email}
+              &#9745;
+            </button>
+            <button className="p-2 bg-slate-900 text-white font-light border rounded">
+              Paid on - {todo.dateofSpend}
+              &#9745;
+            </button>
+            <small className="block mt-1 text-xs text-gray-600">
+              The date format is in YYYY-MM-DD format
+            </small>
           </div>
         );
       })}

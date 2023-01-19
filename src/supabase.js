@@ -5,10 +5,17 @@ const supabase = createClient(
   process.env.REACT_APP_SUPABASE_ANONKEY
 );
 
-async function createSpend({ title, place, amount, friends, email }) {
+async function createSpend({
+  title,
+  place,
+  amount,
+  friends,
+  email,
+  dateofSpend,
+}) {
   const { error } = await supabase
     .from("spends")
-    .insert({ title, place, amount, friends, email });
+    .insert({ title, place, amount, friends, email, dateofSpend });
 
   if (error) alert("There was some error posting the data !");
 }
