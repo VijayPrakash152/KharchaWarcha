@@ -11,7 +11,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
         return (
           <div
             key={index}
-            className="w-3/4 mt-2 p-6  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
+            className="w-auto mt-2 p-6  bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700"
           >
             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
               {todo.title}
@@ -44,7 +44,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
                 );
               })}
             </div>
-            <button className="p-2 bg-slate-900 h-auto w-3/4 text-white font-light border rounded">
+            <button className="p-2 bg-slate-900 h-auto text-white font-light border rounded">
               Paid by - {todo.email}
               &#9745;
             </button>
