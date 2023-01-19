@@ -3,7 +3,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
     handleTodos(event.target.id);
   };
   return (
-    <div className="flex bg-slate-900 p-4  w-full flex-col justify-center items-center">
+    <div className="flex bg-slate-900 p-4  w-full flex-col justify-center items-center overflow:scroll">
       <h2 className="text-white font-light border w-2/3 text-center">
         All Kharchas -{" "}
       </h2>
@@ -29,7 +29,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
               </span>
               <span className="p-2 bg-slate-900 text-white">{todo.place}</span>
             </p>
-            <h3 className="font-semibold w-1/4 bg-slate-900 text-white border rounded p-3">
+            <h3 className="font-semibold w-full bg-slate-900 text-white border rounded p-3">
               Kaun kaun tha -{" "}
             </h3>
             <div className="flex flex-col lg:flex-row">
