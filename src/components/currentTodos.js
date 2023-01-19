@@ -32,7 +32,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
             <h3 className="font-semibold w-1/4 bg-slate-900 text-white border rounded p-3">
               Kaun kaun tha -{" "}
             </h3>
-            <div className="flex">
+            <div className="flex flex-col lg:flex-row">
               {todo.friends.map((friend, index) => {
                 return (
                   <p
