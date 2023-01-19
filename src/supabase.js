@@ -20,9 +20,14 @@ async function signOut() {
 }
 
 async function signInWithGoogle() {
-  const { data, error } = await supabase.auth.signInWithOAuth({
-    provider: "google",
-  });
+  const { data, error } = await supabase.auth.signInWithOAuth(
+    {
+      provider: "google",
+    },
+    {
+      redirectTo: window.location.origin,
+    }
+  );
 
   // console.log(data);
 }
