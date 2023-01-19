@@ -3,7 +3,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
     handleTodos(event.target.id);
   };
   return (
-    <div className="flex bg-slate-900 p-4  w-full flex-col justify-center items-center overflow:scroll">
+    <div className="flex bg-slate-900 p-4  w-full flex-col justify-center items-center">
       <h2 className="text-white font-light border w-2/3 text-center">
         All Kharchas -{" "}
       </h2>
@@ -44,7 +44,7 @@ const CurrentTodos = ({ todos, handleTodos }) => {
                 );
               })}
             </div>
-            <button className="p-2 bg-slate-900 text-white font-light border rounded">
+            <button className="p-2 bg-slate-900 h-auto w-3/4 text-white font-light border rounded">
               Paid by - {todo.email}
               &#9745;
             </button>
