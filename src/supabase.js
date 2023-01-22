@@ -40,7 +40,7 @@ async function signInWithGoogle() {
 }
 
 async function getTodos() {
-  const spends = await supabase.from("spends").select();
+  const spends = await supabase.from("spends").select().order("dateofSpend", { ascending: false });
   // const spends = {
   //   error: null,
   //   data: [
