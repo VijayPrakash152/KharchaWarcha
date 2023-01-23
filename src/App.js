@@ -1,6 +1,5 @@
 //eslint-ignore
 import { getTodos, signInWithGoogle, signOut, supabase } from "./supabase";
-
 import { useState, useEffect } from "react";
 import NavBar from "./components/navBar";
 import CurrentTodos from "./components/currentTodos";
@@ -9,6 +8,7 @@ import Footer from "./components/footer";
 
 function App() {
   const [todos, setTodos] = useState([]);
+
   const [userData, setUserData] = useState({
     username: "",
     email: "",

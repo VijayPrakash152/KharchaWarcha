@@ -5,20 +5,16 @@ const ToggleCard = ({ todo }) => {
   return (
     <div className="w-full flex flex-col justify-center items-center mt-2">
       <button
-        className="min-w-[50%] flex justify-between w-auto font-semibold text-white p-2 bg-slate-900 border rounded"
+        className="min-w-[50%] flex text-xs md:text-sm justify-between w-auto font-semibold text-white p-2 bg-slate-900 border rounded"
         onClick={() => setToggle(!toggle)}
       >
-        <span className=" p-1 font-light border rounded">{todo.title}</span>{" "}
-        <span className=" p-1 font-light border">
-          Paid on - {todo.dateofSpend}
+        <span className=" p-0.5 font-light border rounded ">{todo.title}</span>{" "}
+        <span className=" p-0.5 font-light border rounded text-[0.5rem]">
+          {todo.dateofSpend}
           &#9745;
         </span>
-        <span className="p-1 font-light border rounded">
-          Paid by - {todo.email}
-          &#9745;
-        </span>
-        <span className="p-1 font-light border rounded">
-          Amount - {todo.amount}
+        <span className="p-0.5 font-light border rounded text-[0.5rem]">
+          {todo.email}
           &#9745;
         </span>
       </button>

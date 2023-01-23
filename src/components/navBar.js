@@ -18,7 +18,7 @@ const NavBar = ({
   const navStyle = `flex items-center justify-around flex-wrap ${bgcolor} p-6`;
   return (
     <nav className={navStyle}>
-      <div className="flex items-center flex-no-shrink text-white mr-6">
+      <div className="flex items-center flex-no-shrink text-white">
         <img src="/checked.png" alt="logo" className="w-16 bg-slate-50 mr-2" />
         <span className="font-semibold text-xl tracking-tight">{title}</span>
       </div>

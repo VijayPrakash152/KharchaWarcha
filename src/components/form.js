@@ -206,6 +206,7 @@ const Form = ({ userData: { isLoggedIn, username, email } }) => {
           <DatePicker
             selected={date}
             dateFormat="yyyy-MM-dd"
+            className="border rounded w-2/3"
             onChange={(value) => {
               console.log(value);
               setDate(value);
