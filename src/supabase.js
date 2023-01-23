@@ -18,6 +18,7 @@ async function createSpend({
     .insert({ title, place, amount, friends, email, dateofSpend });
 
   if (error) alert("There was some error posting the data !");
+  else alert("New Kharcha 😎 Created Successfully !");
 }
 
 async function signOut() {
@@ -40,7 +41,10 @@ async function signInWithGoogle() {
 }
 
 async function getTodos() {
-  const spends = await supabase.from("spends").select().order("dateofSpend", { ascending: false });
+  const spends = await supabase
+    .from("spends")
+    .select()
+    .order("dateofSpend", { ascending: false });
   // const spends = {
   //   error: null,
   //   data: [

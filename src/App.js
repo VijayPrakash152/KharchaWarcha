@@ -43,7 +43,7 @@ function App() {
 
   const getUser = async () => {
     const { data, error } = await supabase.auth.getSession();
-    console.log("This message is from getUSer" + JSON.stringify(data));
+    // console.log("This message is from getUSer" + JSON.stringify(data));
 
     if (data.session) {
       return data.session.user;
